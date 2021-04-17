@@ -1,0 +1,39 @@
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  background: linear-gradient(
+    45.34deg,
+    #1d2252 5.66%,
+    #72aaff 50.01%,
+    #00ffff 94.35%
+  );
+  height: 100%;
+}
+
+.title-count {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: row1-start;
+  grid-row-end: 2;
+}
+.container {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+}
+
+.container h2,
+.title-count {
+  color: white;
+  text-align: center;
+}
+
+.App {
+  display: grid;
+  grid-template-columns: 150px auto 150px;
+  grid-template-rows: 150px 100px 150px;
+}
