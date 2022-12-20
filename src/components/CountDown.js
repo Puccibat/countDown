@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useAppContext } from '../hooks/useAppContext';
 
 const CountDown = () => {
-  const difference = +new Date(`2021-04-24 09:30:00`) - +new Date();
+  const { timer } = useAppContext();
+  const difference = +new Date(`${timer.date} ${timer.time}`) - +new Date();
   const calculateTimeLeft = () => {
     let timeLeft = {};
 
@@ -29,7 +31,7 @@ const CountDown = () => {
       <h2>
         {difference > 0 ? (
           <div>
-            <h2>Time remaining before end:</h2>
+            <h2>{timer.title ? timer.title : 'Time remaining before end:'}</h2>
             {timeLeft.days} days : {timeLeft.hours} hours : {timeLeft.minutes}{' '}
             minutes : {timeLeft.seconds} seconds
           </div>

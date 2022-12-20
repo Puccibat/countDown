@@ -1,19 +1,23 @@
-import { useState } from 'react';
 import CountDown from './components/CountDown';
 import Header from './components/Header';
 import SetTimeLeft from './components/SetTimeLeft';
-import SetTitle from './components/SetTitle';
-import ValidateTimerButton from './components/ValidateTimerButton';
+
+import { useAppContext } from './hooks/useAppContext';
 import './style.css';
 
 function App() {
+  const { timer } = useAppContext();
+  console.log(timer);
   return (
     <div className='App'>
-      <Header />
-      <SetTitle />
-      <SetTimeLeft />
-      <ValidateTimerButton />
-      {/* <CountDown /> */}
+      {!timer ? (
+        <>
+          <Header />
+          <SetTimeLeft />
+        </>
+      ) : (
+        <CountDown />
+      )}
     </div>
   );
 }
